@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="hi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>For My Lucky Sister ✨</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=DM+Sans:wght@400;500;700&display=swap');
+    :root{--cream:#fff8e9;--ink:#4b2038;--pink:#e24a7b;--pink2:#ff7e9e;--gold:#f6b94f;--purple:#7d477c}
+    *{box-sizing:border-box} body{margin:0;min-height:100vh;background:#f6d5dc;color:var(--ink);font-family:'DM Sans',sans-serif;overflow:hidden}
+    .scene{position:relative;display:grid;place-items:center;min-height:100svh;padding:22px;isolation:isolate;background:radial-gradient(circle at 15% 15%,#ffe9b2 0 8%,transparent 22%),radial-gradient(circle at 88% 85%,#e7b2d2 0 7%,transparent 26%),linear-gradient(135deg,#f8dfe4,#f7cfd9 48%,#efd4ec)}
+    .scene:before,.scene:after{content:'';position:absolute;width:260px;height:260px;border:16px dotted rgba(255,255,255,.45);border-radius:50%;z-index:-1}.scene:before{left:-90px;bottom:-115px}.scene:after{right:-95px;top:-105px}
+    .card{width:min(650px,100%);min-height:min(690px,calc(100svh - 44px));padding:clamp(24px,6vw,52px);border:2px solid rgba(255,255,255,.8);border-radius:34px;background:rgba(255,253,247,.76);box-shadow:0 24px 70px rgba(117,45,80,.22);backdrop-filter:blur(15px);display:flex;flex-direction:column;text-align:center;overflow:hidden}
+    .topline{display:flex;justify-content:space-between;align-items:center;color:#a95b71;font-size:.78rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase}.sound{border:0;background:#fff1c9;border-radius:99px;padding:9px 12px;cursor:pointer;font-size:1rem}
+    .slides{position:relative;flex:1;display:grid;place-items:center}.slide{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;opacity:0;pointer-events:none;transform:translateX(32px) scale(.98);transition:.55s ease}.slide.active{opacity:1;pointer-events:auto;transform:none}
+    .art{font-size:clamp(5rem,19vw,8.8rem);line-height:1;filter:drop-shadow(0 10px 7px rgba(179,83,112,.18));animation:float 3s ease-in-out infinite}.rakhi{font-size:clamp(6rem,21vw,9.3rem)}.hero-art{width:min(292px,76vw);aspect-ratio:1.18;border-radius:28px;overflow:hidden;margin:12px auto 4px;border:7px solid rgba(255,255,255,.86);box-shadow:0 15px 30px rgba(145,67,91,.22);transform:rotate(-1.2deg);position:relative}.hero-art img{width:100%;height:100%;object-fit:cover;object-position:center 42%;display:block}.hero-art:after{content:'✨';position:absolute;right:8px;top:5px;font-size:1.7rem}
+    h1{font-family:'Baloo 2',cursive;font-size:clamp(2rem,7vw,3.3rem);line-height:1.05;margin:20px 0 10px;font-weight:800} h1 em{font-style:normal;color:var(--pink)}
+    p{max-width:470px;margin:0 auto;color:#70445a;font-size:clamp(1rem,3.8vw,1.18rem);line-height:1.55}.question{font-family:'Baloo 2',cursive;color:#5e2445;font-size:1.55rem;font-weight:800;margin:25px 0 16px}
+    .actions{position:relative;height:92px;width:min(390px,100%);margin-top:4px;display:flex;justify-content:center;gap:15px;align-items:center}.btn{border:0;border-radius:999px;padding:14px 27px;font:700 1rem 'DM Sans',sans-serif;cursor:pointer;box-shadow:0 7px 0 rgba(117,45,80,.13);transition:transform .2s,box-shadow .2s}.btn:active{transform:translateY(4px);box-shadow:0 3px 0 rgba(117,45,80,.13)}.yes{background:linear-gradient(135deg,var(--pink),#c83467);color:white}.no{background:#fff;color:#a7677d;position:relative}.no.running{position:absolute;transition:left .22s ease,top .22s ease}
+    .next{margin-top:28px;background:none;border:0;color:#b54d70;font-weight:700;cursor:pointer;font-size:1rem}.next span{display:inline-block;transition:transform .2s}.next:hover span{transform:translateX(5px)}.hug{margin-top:8px}.pop{animation:pop .55s ease}.heart-arena{position:absolute;inset:0;margin:0;width:100%;height:100%;display:flex;align-items:flex-end;justify-content:center;padding-bottom:12px;pointer-events:none}.catch{position:relative;pointer-events:auto;z-index:4;transition:left .36s cubic-bezier(.2,.9,.3,1.2),top .36s cubic-bezier(.2,.9,.3,1.2),transform .2s;animation:wobble 1.4s ease-in-out infinite}.catch.free{position:absolute}.catch:hover{filter:brightness(1.05)}.game-result{min-height:22px;font-weight:700;color:#b54d70}
+    .dots{display:flex;justify-content:center;gap:7px;margin-top:auto}.dot{height:7px;width:7px;background:#e9b8c6;border-radius:10px;transition:.3s}.dot.active{width:25px;background:var(--pink)}
+    .quote{margin:21px auto 0;padding:14px 18px;border-radius:18px;background:#fff0d9;color:#93534f;font-family:'Baloo 2',cursive;font-size:1.18rem;max-width:440px}.tiny{font-size:.82rem;color:#aa7180;margin-top:18px}.confetti{position:fixed;inset:0;pointer-events:none;overflow:hidden}.confetti i{position:absolute;width:10px;height:17px;background:var(--c);left:var(--x);top:-20px;animation:fall var(--d) linear var(--delay) forwards;border-radius:3px}
+    @keyframes float{50%{transform:translateY(-11px) rotate(3deg)}}@keyframes fall{to{transform:translateY(110svh) rotate(680deg);opacity:.9}}@keyframes pop{50%{transform:scale(1.18) rotate(-3deg)}}@keyframes wobble{50%{transform:rotate(-3deg) scale(1.06)}}
+    @media(max-height:760px){.card{min-height:calc(100svh - 26px);padding:20px 28px}.art{font-size:4.5rem}h1{font-size:2rem;margin:10px 0 4px}.question{margin:12px 0}.next{margin-top:13px}.hero-art{width:190px;margin:5px auto 0}}
+  </style>
+</head>
+<body>
+  <main class="scene"><section class="card" aria-live="polite">
+    <div class="topline"><span>Raksha Bandhan • 2026</span><button class="sound" id="sound" aria-label="Read page aloud">🔊</button></div>
+    <div class="slides">
+      <article class="slide active" data-voice="Hello meri pyaari behen! Aap bahut lucky hain ki aapko itna pyaara bhai mila. Sach bolo, hai na?">
+        <div class="hero-art"><img src="rakhi-siblings-hero.png" alt="A sister lovingly tying rakhi to her brother"></div><h1>Sunno, <em>Lucky Girl!</em></h1><p>Aap bahut lucky hain ki aapko itna pyaara bhai mila. 😌</p><div class="question">Sach bolo, hai na? ✨</div>
+        <div class="actions" id="choice"><button class="btn yes" id="yes">Haan, bilkul! 💖</button><button class="btn no" id="no">Nahi 🙈</button></div><div class="tiny">Psst… ek answer thoda shy hai.</div>
+      </article>
+      <article class="slide" data-voice="Awww, mujhe pehle se hi pata tha! Aap meri favourite sister ho. Haan haan, ek hi ho, phir bhi favourite ho.">
+        <div class="art">🥳</div><h1>Mujhe <em>pata tha!</em></h1><p>Aap meri favourite sister ho — thoda pyaar, thodi nok-jhok, aur bohot saari yaadein. 💕</p><div class="quote">“Sibling goals? Hum toh original hain.”</div><div class="question">Ab ek virtual hug bhejo! 🤗</div><button class="btn yes hug" data-text="Hug sent! 🥰">Tap for a hug</button>
+      </article>
+      <article class="slide" data-voice="Aapke liye ek virtual rakhi aur ek lifetime protection plan. Bas ek chhoti si condition hai: chocolates mein mera share pakka.">
+        <div class="art rakhi">🪢</div><h1>Ek special <em>Rakhi</em> for you</h1><p>Lifetime protection plan activated! 🛡️<br>Bas ek chhoti si condition: chocolates mein mera share pakka. 🍫</p><button class="next">Promise! <span>→</span></button>
+      </article>
+      <article class="slide" data-voice="Important question! Birthday treats aur chocolates ka tax, bhai ko kitna milna chahiye? Soch samajh ke answer dena, madam.">
+        <div class="art">🍫</div><h1>Chocolate <em>Tax</em></h1><p>Birthday treat, festival mithai, aur secret snacks—bhai ka official share kitna? 😋</p><div class="actions"><button class="btn yes tax correct-tax" data-choice="Perfect! Ab aap officially best sister ho. 🍫👑">100% 🍫</button><button class="btn no tax" data-choice="50%? Itni kanjoosi! Try again, madam. 😋">50% 🍬</button><button class="btn no tax" data-choice="0%? Yeh option toh bhai ke phone mein open hi nahi hota! 😂">0% 🙊</button></div><div class="tiny game-result"></div>
+      </article>
+      <article class="slide" data-voice="Aap mere liye sirf behen nahi, meri forever friend ho. Ab is cute little heart ko pakad ke dikhao. It is a little shy, just like your bhai when mumma asks who broke the vase.">
+        <div class="art">💗</div><h1>Catch the <em>love!</em></h1><p>Is sharmile heart ko tap karo. Pakad liya toh ek secret message milega! ✨</p><div class="actions heart-arena"><button class="btn yes catch">Catch me! 💗</button></div><div class="tiny game-result"></div>
+      </article>
+      <article class="slide" data-voice="Thank you for being my sister, my secret keeper, and sometimes my biggest critic. Aapki har smile mein meri khushi hai. Main hamesha aapke saath hoon.">
+        <div class="art">🤗</div><h1>Always <em>your bhai</em></h1><p>Thank you for being my secret keeper, biggest critic, aur forever cheerleader. Main hamesha aapke saath hoon. 🌷</p><div class="question">Bhai ko ek smile de do? 😊</div><button class="btn yes smile">Yeh lo! 😄</button>
+      </article>
+      <article class="slide" data-voice="Happy Raksha Bandhan, meri pyaari behen. Aapki smile hamesha aise hi chamakti rahe. Lots and lots of love, from your very lucky bhai.">
+        <div class="art">🎁</div><h1>Happy <em>Raksha Bandhan!</em></h1><p>Meri pyaari behen, aapki smile hamesha aise hi chamakti rahe. Aaj ka gift: unlimited hugs + one very proud brother. ✨</p><div class="quote">Love you, behen! 💗</div><button class="btn next" id="replay">Phir se masti karo ↻</button>
+      </article>
+    </div><div class="dots" aria-label="Slide progress"></div>
+  </section></main><div class="confetti" id="confetti"></div>
+  <script>
+    const slides=[...document.querySelectorAll('.slide')], dots=document.querySelector('.dots'), confetti=document.querySelector('#confetti'); let current=0, soundOn=true;
+    slides.forEach((_,i)=>{const d=document.createElement('div');d.className='dot'+(!i?' active':'');dots.append(d)}); const dotEls=[...dots.children];
+    function speak(){if(!soundOn||!('speechSynthesis' in window))return; speechSynthesis.cancel(); const u=new SpeechSynthesisUtterance(slides[current].dataset.voice);u.lang='hi-IN';u.rate=.92;speechSynthesis.speak(u)}
+    function show(i){slides[current].classList.remove('active');current=(i+slides.length)%slides.length;slides[current].classList.add('active');dotEls.forEach((d,x)=>d.classList.toggle('active',x===current));speak();if(current===6) celebrate()}
+    document.querySelectorAll('.next').forEach(b=>b.addEventListener('click',()=>show(b.id==='replay'?0:current+1)));document.querySelector('#yes').addEventListener('click',()=>show(1));
+    const no=document.querySelector('#no'); function run(){no.classList.add('running');const x=(Math.random()-.5)*310,y=(Math.random()-.5)*230;no.style.left='50%';no.style.top='50%';no.style.transform='translate('+x+'px,'+y+'px)'};['mouseenter','pointerdown','focus'].forEach(e=>no.addEventListener(e,run));
+    document.querySelector('.hug').addEventListener('click',e=>{e.currentTarget.textContent='Hug received! 🤗💗';e.currentTarget.classList.add('pop');setTimeout(()=>show(2),850)});
+    document.querySelectorAll('.tax').forEach(b=>b.addEventListener('click',e=>{const result=e.currentTarget.closest('.slide').querySelector('.game-result');result.textContent=e.currentTarget.dataset.choice;if(e.currentTarget.classList.contains('correct-tax')){e.currentTarget.classList.add('pop');setTimeout(()=>show(4),1100)}}));
+    const catchBtn=document.querySelector('.catch');let heartLayer=0,heartDashing=false,dashTimer;const heartLayers=['Catch me! 💗','Oho, almost! 💨','Itna pyaar? Pakdo mujhe! 😜'];function moveHeart(){const parent=catchBtn.parentElement,r=parent.getBoundingClientRect(),x=.04+Math.random()*.88,y=.04+Math.random()*.86;catchBtn.style.left=Math.max(6,x*(r.width-catchBtn.offsetWidth))+'px';catchBtn.style.top=Math.max(6,y*(r.height-catchBtn.offsetHeight))+'px'}function dashHeart(){if(heartLayer===0||heartLayer>2||heartDashing)return;heartDashing=true;let hop=0;dashTimer=setInterval(()=>{moveHeart();hop++;if(hop>=3){clearInterval(dashTimer);heartDashing=false}},480)}catchBtn.addEventListener('pointerenter',dashHeart);catchBtn.addEventListener('click',()=>{if(heartDashing){clearInterval(dashTimer);heartDashing=false}const result=catchBtn.closest('.slide').querySelector('.game-result');if(heartLayer===0){heartLayer=1;catchBtn.classList.add('free');catchBtn.textContent=heartLayers[1];result.textContent='';moveHeart();return}if(heartLayer===1){heartLayer=2;catchBtn.textContent=heartLayers[2];result.textContent='';moveHeart();return}catchBtn.textContent='You caught it! 💞';catchBtn.classList.add('pop');catchBtn.disabled=true;result.textContent='Secret: you are the best behen ever!';setTimeout(()=>show(5),1200)});
+    document.querySelector('.smile').addEventListener('click',e=>{e.currentTarget.textContent='Smile received! 🥹';e.currentTarget.classList.add('pop');setTimeout(()=>show(6),800)});
+    document.querySelector('#sound').addEventListener('click',()=>{soundOn=!soundOn;document.querySelector('#sound').textContent=soundOn?'🔊':'🔇';if(soundOn)speak();else speechSynthesis.cancel()});
+    function celebrate(){for(let i=0;i<72;i++){let p=document.createElement('i');p.style.setProperty('--x',Math.random()*100+'%');p.style.setProperty('--d',(2+Math.random()*2.4)+'s');p.style.setProperty('--delay',Math.random()*.6+'s');p.style.setProperty('--c',['#e24a7b','#f6b94f','#7d477c','#65b7a8'][i%4]);confetti.append(p);setTimeout(()=>p.remove(),4600)}}
+    window.addEventListener('load',()=>setTimeout(speak,450));
+  </script>
+</body></html>
